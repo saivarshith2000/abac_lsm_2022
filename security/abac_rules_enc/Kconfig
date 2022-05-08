@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: GPL-2.0-only
+config SECURITY_ABAC_RULES_ENC
+	bool "ABAC Rules model support with encoded rules and attributes"
+	depends on SECURITY
+	default y
+	help
+	  This enables the Attribute Based Access Control LSM based on encoded object-specific rules.

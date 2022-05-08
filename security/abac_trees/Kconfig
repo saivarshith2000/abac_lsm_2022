@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: GPL-2.0-only
+config SECURITY_ABAC_TREES
+	bool "ABAC Trees model support"
+	depends on SECURITY
+	default y
+	help
+	  This enables the Attribute Based Access Control LSM based on object-specific PolTrees.

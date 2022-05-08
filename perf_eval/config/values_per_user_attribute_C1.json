@@ -1,0 +1,20 @@
+{
+	"name": "values_per_user_attribute_C1",
+	"user": {
+		"count": 10,
+		"attrs": 5,
+		"values_per_attr": [5, 10, 15, 25]
+	},
+	"obj": {
+		"count": 100,
+		"attrs": 5,
+		"values_per_attr": 5
+	},
+	"env": {
+		"attrs": 3,
+		"values_per_attr": 2
+	},
+	"policy": {
+		"count": 10
+	}
+}

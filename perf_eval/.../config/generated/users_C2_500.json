@@ -1,0 +1,20 @@
+{
+    "name": "users_C2_500",
+    "user": {
+        "count": 500,
+        "attrs": 10,
+        "values_per_attr": 10
+    },
+    "obj": {
+        "count": 500,
+        "attrs": 10,
+        "values_per_attr": 10
+    },
+    "env": {
+        "attrs": 5,
+        "values_per_attr": 4
+    },
+    "policy": {
+        "count": 50
+    }
+}
