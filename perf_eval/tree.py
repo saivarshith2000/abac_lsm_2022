@@ -44,6 +44,11 @@ def max_entropy_attr(attributes, rules, umap, emap):
     max_vals = None
     for a in attributes:
         vals = get_possible_values(a, rules)
+
+        #if a does not appear in rules, skip it
+        if len(vals) == 0:
+            continue
+
         entropy = 0
         is_user = False
         for v in vals:
@@ -85,6 +90,11 @@ def build_attr_tree_r(attributes, rules, umap, emap, nid):
         return AttrNode(nid[0], op = rules[0]["op"])
     # Get the attribute with maximum entropy and its possible values
     a, vals = max_entropy_attr(attributes, rules, umap, emap)
+
+    # If no attribute appears in rules
+    if vals == None:
+        return AttrNode(nid[0], op = rules[0]["op"])
+    
     n = AttrNode(nid[0], attr = a)
     for v in vals:
         child_rules = filter_rules(a, v, rules)
