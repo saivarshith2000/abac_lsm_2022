@@ -44,6 +44,11 @@ def max_entropy_attr(attributes, rules, umap, emap):
     max_vals = None
     for a in attributes:
         vals = get_possible_values(a, rules)
+
+        #if a does not appear in rules, skip it
+        if len(vals) == 0:
+            continue
+
         entropy = 0
         is_user = False
         for v in vals:
@@ -66,13 +71,11 @@ def max_entropy_attr(attributes, rules, umap, emap):
                 prob /= len(emap.keys())
             if prob != 0:
                 entropy += -1 * (prob * math.log(prob))
-
-        # If the attribute appears in rules
-        if(len(vals) != 0):
-            if entropy > max_entropy:
-                max_entropy = entropy
-                max_attr = a
-                max_vals = vals
+                
+        if entropy > max_entropy:
+            max_entropy = entropy
+            max_attr = a
+            max_vals = vals
     #print(f"{max_entropy}\n{max_vals}")
     return max_attr, max_vals
 
