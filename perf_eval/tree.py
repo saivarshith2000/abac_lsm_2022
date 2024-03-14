@@ -71,7 +71,7 @@ def max_entropy_attr(attributes, rules, umap, emap):
                 prob /= len(emap.keys())
             if prob != 0:
                 entropy += -1 * (prob * math.log(prob))
-                
+
         if entropy > max_entropy:
             max_entropy = entropy
             max_attr = a
